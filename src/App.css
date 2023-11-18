@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background-color: #242424;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes arrowRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .boxSecond {
+    animation: logo-spin infinite 20s linear;
+  }
+} */
+
+.clockWrapper {
+  width: 480px;
+  height: 480px;
+  margin-top: 2em;
+  padding: 0.5em;
+  box-shadow: 0 0 8px white;
+  border-radius: 50%;
+}
+
+.outerCircle {
+  width: 100%;
+  height: 100%;
+  border: 0.5em solid blue;
+  border-radius: 50%;
+  padding: 1em;
+}
+
+.clockFace {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 0.2em solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clockFace:before {
+  content: "";
+  position: absolute;
+
+  width: 1.5em;
+  height: 1.5em;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.segment {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.5em;
+  height: 2em;
+  background-color: white;
+}
+
+.boxSecond {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.arrowSecondTop {
+  position: absolute;
+  width: 1.5em;
+  height: 1.5em;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0.2em solid red;
+  border-radius: 50%;
+}
+
+.arrowSecond {
+  position: absolute;
+  width: 0.2em;
+  height: 50%;
+  top: 1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+  z-index: 9;
+}
+
+.boxMinute {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.arrowMinute {
+  position: absolute;
+  width: 0.5em;
+  height: 40%;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+}
+
+.boxHour {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.arrowHour {
+  position: absolute;
+  width: 0.8em;
+  height: 30%;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+}
