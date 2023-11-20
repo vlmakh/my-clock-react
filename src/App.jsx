@@ -44,7 +44,7 @@ function App() {
         sec={current.seconds}
       />
 
-      <p>{Math.round(hrDeg)}:{(Math.round(minDeg))}:{(secDeg)} </p>
+      {/* <p>{Math.round(hrDeg)}:{(Math.round(minDeg))}:{(secDeg)} </p> */}
 
       <div className="clockWrapper">
         <div className="outerCircle">
