@@ -2,6 +2,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { useState } from "react";
+import { DigitalClock } from "./components/DigitalClock/DigitalClock";
 
 function App() {
   const [secDeg, setSecDeg] = useState(0);
@@ -20,8 +21,8 @@ function App() {
 
     setCurrent({ hours, minutes, seconds });
     setSecDeg(time.getSeconds() * 6);
-    setMinDeg(time.getMinutes() * 6);
-    setHrDeg(time.getHours() * 30);
+    setMinDeg(time.getMinutes() * 6 + (time.getSeconds() * 1) / 60);
+    setHrDeg(time.getHours() * 30 + time.getMinutes() / 2);
   };
 
   setInterval(updateTime, 1000);
@@ -37,9 +38,11 @@ function App() {
         </a>
       </div>
 
-      <h1>
-        {current.hours}:{current.minutes}:{current.seconds}
-      </h1>
+      <DigitalClock
+        hours={current.hours}
+        min={current.minutes}
+        sec={current.seconds}
+      />
 
       <div className="clockWrapper">
         <div className="outerCircle">
@@ -61,7 +64,10 @@ function App() {
               <div className="arrowMinute"></div>
             </div>
 
-            <div className="boxHour" style={{ transform: `rotate(${hrDeg}deg)` }}>
+            <div
+              className="boxHour"
+              style={{ transform: `rotate(${hrDeg}deg)` }}
+            >
               <div className="arrowHour"></div>
             </div>
           </div>
