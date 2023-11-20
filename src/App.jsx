@@ -21,7 +21,7 @@ function App() {
 
     setCurrent({ hours, minutes, seconds });
     setSecDeg(time.getSeconds() * 6);
-    setMinDeg(time.getMinutes() * 6 + (time.getSeconds() * 1) / 60);
+    setMinDeg(time.getMinutes() * 6 + time.getSeconds() / 10);
     setHrDeg(time.getHours() * 30 + time.getMinutes() / 2);
   };
 
@@ -43,6 +43,8 @@ function App() {
         min={current.minutes}
         sec={current.seconds}
       />
+
+      <p>{Math.round(hrDeg)}:{(Math.round(minDeg))}:{(secDeg)} </p>
 
       <div className="clockWrapper">
         <div className="outerCircle">
