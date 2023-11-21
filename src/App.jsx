@@ -25,6 +25,11 @@ function App() {
     setHrDeg(time.getHours() * 30 + time.getMinutes() / 2);
   };
 
+  const degree = [];
+  for (let i = 0; i < 360; i = i + 6) {
+    degree.push(i);
+  }
+
   setInterval(updateTime, 1000);
 
   return (
@@ -43,13 +48,25 @@ function App() {
         min={current.minutes}
         sec={current.seconds}
       />
-
-      {/* <p>{Math.round(hrDeg)}:{(Math.round(minDeg))}:{(secDeg)} </p> */}
-
+      
       <div className="clockWrapper">
         <div className="outerCircle">
           <div className="clockFace">
-            <div className="segment"></div>
+            {degree.map((deg) =>
+              deg % 5 === 0 ? (
+                <div
+                  key={deg}
+                  className="segment"
+                  style={{ transform: `rotate(${deg}deg)` }}
+                ></div>
+              ) : (
+                <div
+                  key={deg}
+                  className="segment"
+                  style={{ transform: `rotate(${deg}deg)`, height: "8px" }}
+                ></div>
+              )
+            )}
 
             <div
               className="boxSecond"
