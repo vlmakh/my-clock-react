@@ -25,9 +25,9 @@ function App() {
     setHrDeg(time.getHours() * 30 + time.getMinutes() / 2);
   };
 
-  const degree = [];
+  const degrees = [];
   for (let i = 0; i < 360; i = i + 6) {
-    degree.push(i);
+    degrees.push(i);
   }
 
   setInterval(updateTime, 1000);
@@ -52,7 +52,7 @@ function App() {
       <div className="clockWrapper">
         <div className="outerCircle">
           <div className="clockFace">
-            {degree.map((deg) =>
+            {degrees.map((deg) =>
               deg % 5 === 0 ? (
                 <div
                   key={deg}
