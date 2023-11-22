@@ -26,7 +26,7 @@ body {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes arrowRotate {
+@keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -35,122 +35,8 @@ body {
   }
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .boxSecond {
+@media (prefers-reduced-motion: no-preference) {
+  .react {
     animation: logo-spin infinite 20s linear;
   }
-} */
-
-.clockWrapper {
-  width: 480px;
-  height: 480px;
-  margin-top: 2em;
-  padding: 0.5em;
-  box-shadow: 0 0 8px white;
-  border-radius: 50%;
-}
-
-.outerCircle {
-  width: 100%;
-  height: 100%;
-  border: 0.5em solid blue;
-  border-radius: 50%;
-  padding: 1em;
-}
-
-.clockFace {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border: 4px solid white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.clockFace:before {
-  content: "";
-  position: absolute; 
-
-  width: 1.5em;
-  height: 1.5em;
-  background-color: red;
-  border-radius: 50%;
-  z-index: 10;
-}
-
-.segment {
-  position: absolute;
-  top: 0;
-  left: calc(50% - 4px);
-  transform-origin: 4px 206px;
-
-  width: 8px;
-  height: 32px;
-  background-color: white;
-}
-
-.boxSecond {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  border-radius: 50%;
-}
-
-.arrowSecondTop {
-  position: absolute;
-  width: 1.5em;
-  height: 1.5em;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 0.2em solid red;
-  border-radius: 50%;
-}
-
-.arrowSecond {
-  position: absolute;
-  width: 0.2em;
-  height: 50%;
-  top: 1.5em;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: red;
-  z-index: 9;
-}
-
-.boxMinute {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-
-.arrowMinute {
-  position: absolute;
-  width: 0.5em;
-  height: 40%;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-}
-
-.boxHour {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-
-.arrowHour {
-  position: absolute;
-  width: 0.8em;
-  height: 30%;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
 }
