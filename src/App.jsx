@@ -6,19 +6,27 @@ import { DigitalClock } from "./components/DigitalClock/DigitalClock";
 import { AnalogClock } from "./components/AnalogClock/AnalogClock";
 
 function App() {
-  const [secDeg, setSecDeg] = useState(0);
-  const [minDeg, setMinDeg] = useState(0);
-  const [hrDeg, setHrDeg] = useState(0);
-  const [current, setCurrent] = useState({});
+  let time = new Date();
 
-  let time;
+  let hours = time.getHours().toString().padStart(2, "0");
+  let minutes = time.getMinutes().toString().padStart(2, "0");
+  let seconds = time.getSeconds().toString().padStart(2, "0");
+
+  const [secDeg, setSecDeg] = useState(time.getSeconds() * 6);
+  const [minDeg, setMinDeg] = useState(
+    time.getMinutes() * 6 + time.getSeconds() / 10
+  );
+  const [hrDeg, setHrDeg] = useState(
+    time.getHours() * 30 + time.getMinutes() / 2
+  );
+  const [current, setCurrent] = useState({});
 
   const updateTime = () => {
     time = new Date();
 
-    let hours = time.getHours().toString().padStart(2, "0");
-    let minutes = time.getMinutes().toString().padStart(2, "0");
-    let seconds = time.getSeconds().toString().padStart(2, "0");
+    hours = time.getHours().toString().padStart(2, "0");
+    minutes = time.getMinutes().toString().padStart(2, "0");
+    seconds = time.getSeconds().toString().padStart(2, "0");
 
     setCurrent({ hours, minutes, seconds });
     setSecDeg(time.getSeconds() * 6);
