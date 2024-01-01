@@ -1,4 +1,5 @@
 import "./AnalogClock.css";
+import PropTypes from "prop-types";
 
 export const AnalogClock = ({ secDeg, minDeg, hrDeg }) => {
   const degrees = [];
@@ -48,4 +49,10 @@ export const AnalogClock = ({ secDeg, minDeg, hrDeg }) => {
       </div>
     </div>
   );
+};
+
+AnalogClock.propTypes = {
+  secDeg: PropTypes.number,
+  minDeg: PropTypes.number,
+  hrDeg: PropTypes.number,
 };

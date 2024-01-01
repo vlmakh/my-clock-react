@@ -22,7 +22,12 @@ export const DigitalClock = ({ currentTime }) => {
 };
 
 DigitalClock.propTypes = {
-  hours: PropTypes.string,
-  min: PropTypes.string,
-  sec: PropTypes.string,
+  currentTime: PropTypes.shape({
+    hours: PropTypes.string,
+    min: PropTypes.string,
+    sec: PropTypes.string,
+    day: PropTypes.string,
+    month: PropTypes.string,
+    year: PropTypes.number,
+  }),
 };
