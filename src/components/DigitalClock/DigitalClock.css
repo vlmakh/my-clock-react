@@ -1,10 +1,16 @@
-.digitalWrap {
+.digitalTime {
     display: flex;
     justify-content: center;
-    padding: 0.5em;
+    padding-top: 0.5em;
     font-weight: bold;
     font-size: 3.2em;
     max-width: 10em;
+}
+
+.digitalDate {
+    text-align: center;
+    padding-bottom: 0.5em;
+    font-size: 2.2em;
 }
 
 .number {

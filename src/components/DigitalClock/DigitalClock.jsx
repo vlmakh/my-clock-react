@@ -1,14 +1,22 @@
 import "./DigitalClock.css";
 import PropTypes from "prop-types";
 
-export const DigitalClock = ({ hours, min, sec }) => {
+export const DigitalClock = ({ currentTime }) => {
   return (
-    <div className="digitalWrap">
-      <p className="number">{hours}</p>
-      <p>:</p>
-      <p className="number">{min}</p>
-      <p>:</p>
-      <p className="number">{sec}</p>
+    <div>
+      <div className="digitalTime">
+        <p className="number">{currentTime.hours}</p>
+        <p>:</p>
+        <p className="number">{currentTime.minutes}</p>
+        <p>:</p>
+        <p className="number">{currentTime.seconds}</p>
+      </div>
+
+      <div className="digitalDate">
+        <p className="number">
+          {currentTime.day}.{currentTime.month}.{currentTime.year}
+        </p>
+      </div>
     </div>
   );
 };

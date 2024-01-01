@@ -8,6 +8,10 @@ import { AnalogClock } from "./components/AnalogClock/AnalogClock";
 function App() {
   let time = new Date();
 
+  let day = time.getDay().toString().padStart(2, "0");
+  let month = (time.getMonth() + 1).toString().padStart(2, "0");
+  let year = time.getFullYear();
+
   let hours = time.getHours().toString().padStart(2, "0");
   let minutes = time.getMinutes().toString().padStart(2, "0");
   let seconds = time.getSeconds().toString().padStart(2, "0");
@@ -28,7 +32,7 @@ function App() {
     minutes = time.getMinutes().toString().padStart(2, "0");
     seconds = time.getSeconds().toString().padStart(2, "0");
 
-    setCurrent({ hours, minutes, seconds });
+    setCurrent({ day, month, year, hours, minutes, seconds });
     setSecDeg(time.getSeconds() * 6);
     setMinDeg(time.getMinutes() * 6 + time.getSeconds() / 10);
     setHrDeg(time.getHours() * 30 + time.getMinutes() / 2);
@@ -47,11 +51,7 @@ function App() {
         </a>
       </div>
 
-      <DigitalClock
-        hours={current.hours}
-        min={current.minutes}
-        sec={current.seconds}
-      />
+      <DigitalClock currentTime={current} />
 
       <AnalogClock secDeg={secDeg} minDeg={minDeg} hrDeg={hrDeg} />
     </>
