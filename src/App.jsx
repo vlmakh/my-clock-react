@@ -8,13 +8,13 @@ import { AnalogClock } from "./components/AnalogClock/AnalogClock";
 function App() {
   let time = new Date();
 
-  let day = time.getDay().toString().padStart(2, "0");
-  let month = (time.getMonth() + 1).toString().padStart(2, "0");
-  let year = time.getFullYear();
-
   let hours = time.getHours().toString().padStart(2, "0");
   let minutes = time.getMinutes().toString().padStart(2, "0");
   let seconds = time.getSeconds().toString().padStart(2, "0");
+
+  let day = time.getDay().toString().padStart(2, "0");
+  let month = (time.getMonth() + 1).toString().padStart(2, "0");
+  let year = time.getFullYear();
 
   const [secDeg, setSecDeg] = useState(time.getSeconds() * 6);
   const [minDeg, setMinDeg] = useState(
@@ -31,6 +31,9 @@ function App() {
     hours = time.getHours().toString().padStart(2, "0");
     minutes = time.getMinutes().toString().padStart(2, "0");
     seconds = time.getSeconds().toString().padStart(2, "0");
+    day = time.getDay().toString().padStart(2, "0");
+    month = (time.getMonth() + 1).toString().padStart(2, "0");
+    year = time.getFullYear();
 
     setCurrent({ day, month, year, hours, minutes, seconds });
     setSecDeg(time.getSeconds() * 6);
